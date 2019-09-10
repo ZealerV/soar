@@ -7,6 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "The following playbook allows for recon on any Hash artifact. This includes MD5, SHA1, SHA256, and SHA512",
+            "hash": "1d475313286d596fa32267ab9f3cb25d13334f22",
             "joint": {
                 "cells": [
                     {
@@ -198,7 +199,7 @@
                         "callback_start": 1,
                         "callsback": false,
                         "connected_to_start": true,
-                        "connection_name": "prompt 1, prompt 2",
+                        "connection_name": "prompt 2, prompt 1",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -216,12 +217,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 303,
-                        "line_start": 290,
+                        "line_end": 339,
+                        "line_start": 326,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 12,
+                        "order": 14,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -276,7 +277,7 @@
                             }
                         },
                         "position": {
-                            "x": 1620,
+                            "x": 1740,
                             "y": 240
                         },
                         "previous_function": "",
@@ -11271,47 +11272,6 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "97160e27-7b92-4d18-8ec5-0b8528a4f94e",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "96bfca7f-3e63-488a-892d-2b7571134dfe",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "2f6c2773-9c0a-4a09-a8bf-f0a492ec09f1",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 27
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
                         "id": "bc1d008c-62b1-4aa5-96ae-51fee01a517f",
                         "router": {
                             "name": "metro"
@@ -14124,7 +14084,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('prompt_1() called')\n    \n    # set user and message variables for phantom.prompt call\n    user = \"admin\"\n    message = \"\"\"The following Hash is malicious\n{1}{0}{3}{2}\n{4}{6}{5}{7}\nDo you want to block this Hash?\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"artifact:*.cef.fileHashSha1\",\n        \"artifact:*.cef.fileHashMd5\",\n        \"artifact:*.cef.fileHashSha256\",\n        \"artifact:*.cef.fileHashSha512\",\n        \"file_reputation_SHA1:action_result.data.*.positives\",\n        \"file_reputation_MD5:action_result.data.*.positives\",\n        \"file_reputation_SHA256:action_result.data.*.positives\",\n        \"file_reputation_SHA512:action_result.data.*.positives\",\n    ]\n\n    #responses:\n    response_types = [\n        {\n            \"prompt\": \"\",\n            \"options\": {\n                \"type\": \"list\",\n                \"choices\": [\n                    \"Yes\",\n                    \"No\",\n                ]\n            },\n        },\n    ]\n\n    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name=\"prompt_1\", parameters=parameters, response_types=response_types)\n\n    return",
+                        "block_code": "def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('prompt_1() called')\n    \n    # set user and message variables for phantom.prompt call\n    user = \"admin\"\n    message = \"\"\"The following Hash is malicious\n{1}{0}{3}{2}\n{4}{6}{5}{7}\nDo you want to block this Hash?\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"artifact:*.cef.fileHashSha1\",\n        \"artifact:*.cef.fileHashMd5\",\n        \"artifact:*.cef.fileHashSha256\",\n        \"artifact:*.cef.fileHashSha512\",\n        \"file_reputation_SHA1:action_result.data.*.positives\",\n        \"file_reputation_MD5:action_result.data.*.positives\",\n        \"file_reputation_SHA256:action_result.data.*.positives\",\n        \"file_reputation_SHA512:action_result.data.*.positives\",\n    ]\n\n    #responses:\n    response_types = [\n        {\n            \"prompt\": \"\",\n            \"options\": {\n                \"type\": \"list\",\n                \"choices\": [\n                    \"Yes\",\n                    \"No\",\n                ]\n            },\n        },\n    ]\n\n    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name=\"prompt_1\", parameters=parameters, response_types=response_types, callback=filter_5)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -14368,7 +14328,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def prompt_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('prompt_2() called')\n    \n    # set user and message variables for phantom.prompt call\n    user = \"admin\"\n    message = \"\"\"The following Hash is malicious\n{0}\n{1}\nDo you want to block this Hash?\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"detonate_file_1:artifact:*.cef.fileHashSha256\",\n        \"detonate_file_1:action_result.data.*.positives\",\n    ]\n\n    #responses:\n    response_types = [\n        {\n            \"prompt\": \"\",\n            \"options\": {\n                \"type\": \"list\",\n                \"choices\": [\n                    \"Yes\",\n                    \"No\",\n                ]\n            },\n        },\n    ]\n\n    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name=\"prompt_2\", parameters=parameters, response_types=response_types)\n\n    return",
+                        "block_code": "def prompt_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('prompt_2() called')\n    \n    # set user and message variables for phantom.prompt call\n    user = \"admin\"\n    message = \"\"\"The following Hash is malicious\n{0}\n{1}\nDo you want to block this Hash?\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"detonate_file_1:artifact:*.cef.fileHashSha256\",\n        \"detonate_file_1:action_result.data.*.positives\",\n    ]\n\n    #responses:\n    response_types = [\n        {\n            \"prompt\": \"\",\n            \"options\": {\n                \"type\": \"list\",\n                \"choices\": [\n                    \"Yes\",\n                    \"No\",\n                ]\n            },\n        },\n    ]\n\n    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name=\"prompt_2\", parameters=parameters, response_types=response_types, callback=filter_4)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -14466,7 +14426,7 @@
                             }
                         },
                         "position": {
-                            "x": 1380,
+                            "x": 1320,
                             "y": 180
                         },
                         "previous_function": "",
@@ -14518,7 +14478,7 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "c4cdec4b-61cd-41cb-98f2-0074024cc73b",
+                        "id": "7910e98c-537a-40e2-9ef0-aa24e06d90a7",
                         "router": {
                             "name": "metro"
                         },
@@ -14531,12 +14491,449 @@
                             "right"
                         ],
                         "target": {
+                            "id": "686e3b91-3560-44f5-89e4-9bd40bd9aa23",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 35
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773",
+                                "transform": "rotate(45 30 70)"
+                            },
+                            ".inPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".number": {
+                                "text": 4
+                            },
+                            ".outPorts>.port-0": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                },
+                                "ref-x": 83,
+                                "ref-y": 40
+                            },
+                            ".outPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def filter_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('filter_4() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"prompt_2:action_result.summary.responses.0\", \"==\", \"Yes\"],\n        ],\n        name=\"filter_4:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        pass\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "prompt 2",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "686e3b91-3560-44f5-89e4-9bd40bd9aa23",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 308,
+                        "line_start": 290,
+                        "name": "filter",
+                        "notes": "",
+                        "number": 4,
+                        "order": 12,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "outputs": [
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": "==",
+                                        "data_type": "",
+                                        "param": "prompt_2:action_result.summary.responses.0",
+                                        "value": "Yes"
+                                    }
+                                ],
+                                "display": "If",
+                                "logic": "and",
+                                "type": "if"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1480,
+                            "y": 180
+                        },
+                        "previous_function": "",
+                        "previous_name": "filter_4",
+                        "show_number": true,
+                        "size": {
+                            "height": 82,
+                            "width": 82
+                        },
+                        "state": "filter",
+                        "status": "",
+                        "type": "coa.Filter",
+                        "warn": "",
+                        "z": 37
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "0036006f-a689-4f9b-bc2b-ca0f72546003",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "686e3b91-3560-44f5-89e4-9bd40bd9aa23",
+                            "port": "out-1",
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
                             "id": "2f6c2773-9c0a-4a09-a8bf-f0a492ec09f1",
                             "port": null,
                             "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
                         },
                         "type": "link",
-                        "z": 35
+                        "z": 38
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "4710d649-b68e-4832-9d54-a53b43dd6899",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "96bfca7f-3e63-488a-892d-2b7571134dfe",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "200fb774-7a53-4bad-8059-4231df751b73",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 39
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773",
+                                "transform": "rotate(45 30 70)"
+                            },
+                            ".inPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".number": {
+                                "text": 5
+                            },
+                            ".outPorts>.port-0": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                },
+                                "ref-x": 83,
+                                "ref-y": 40
+                            },
+                            ".outPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def filter_5(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('filter_5() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"prompt_1:action_result.summary.responses.0\", \"==\", \"Yes\"],\n        ],\n        name=\"filter_5:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        pass\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "prompt 1",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "200fb774-7a53-4bad-8059-4231df751b73",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 326,
+                        "line_start": 308,
+                        "name": "filter",
+                        "notes": "",
+                        "number": 5,
+                        "order": 13,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "outputs": [
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": "==",
+                                        "data_type": "",
+                                        "param": "prompt_1:action_result.summary.responses.0",
+                                        "value": "Yes"
+                                    }
+                                ],
+                                "display": "If",
+                                "logic": "and",
+                                "type": "if"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1480,
+                            "y": 260
+                        },
+                        "previous_function": "",
+                        "previous_name": "filter_5",
+                        "show_number": true,
+                        "size": {
+                            "height": 82,
+                            "width": 82
+                        },
+                        "state": "filter",
+                        "status": "",
+                        "type": "coa.Filter",
+                        "warn": "",
+                        "z": 40
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "2bb7415d-6966-49fe-af37-e1ef8bc8aa39",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "200fb774-7a53-4bad-8059-4231df751b73",
+                            "port": "out-1",
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "2f6c2773-9c0a-4a09-a8bf-f0a492ec09f1",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 41
                     }
                 ]
             },
@@ -14545,7 +14942,7 @@
         "schema": 3,
         "version": "4.5.15922"
     },
-    "create_time": "2019-09-10T17:22:40.951505+00:00",
+    "create_time": "2019-09-10T17:49:10.263645+00:00",
     "draft_mode": false,
     "labels": [
         "*"
