@@ -7,6 +7,7 @@
             "clean": true,
             "code_block": "import sys\nimport urllib \nimport urlparse\nimport time",
             "description": "This playbook will take the following data and run through recon modules:\n\nnew stuff\n\nActions include:\n\nPhantom DNS\nPhantom IP\nVirusTotal",
+            "hash": "b86651323ee52dbe3b80da79d8040419a6376628",
             "joint": {
                 "cells": [
                     {
@@ -72,12 +73,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 314,
-                        "line_start": 301,
+                        "line_end": 274,
+                        "line_start": 261,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 16,
+                        "order": 15,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -989,1020 +990,6 @@
                         "z": 493
                     },
                     {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "4a09ecbf-9661-469c-91ea-2d3ae667a1b4",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "4b0e6fba-b76b-40a0-a3fa-6dff162fe213",
-                            "port": "out-1",
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "66216455-ac45-4ca7-909c-d4a18af52619",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 497
-                    },
-                    {
-                        "action": "ip reputation",
-                        "action_type": "investigate",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "ip": "artifact:*.cef.destinationAddress"
-                        },
-                        "angle": 0,
-                        "app": "VirusTotal",
-                        "appid": "11f676a4-f3d4-4db0-8587-f4e942c07c7c",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "ip reputation",
-                                "actions": [
-                                    "detonate url",
-                                    "detonate file",
-                                    "get report",
-                                    "get file",
-                                    "ip reputation",
-                                    "domain reputation",
-                                    "url reputation",
-                                    "file reputation",
-                                    "test connectivity"
-                                ],
-                                "active": true,
-                                "app_name": "VirusTotal",
-                                "app_version": "1.2.52",
-                                "appid": "11f676a4-f3d4-4db0-8587-f4e942c07c7c",
-                                "asset_name": "virustotal_api",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "ip": "artifact:*.cef.destinationAddress"
-                                },
-                                "has_app": true,
-                                "id": 6,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "virustotal_api",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "success"
-                                        ]
-                                    },
-                                    {
-                                        "column_name": "Ip",
-                                        "column_order": 0,
-                                        "contains": [
-                                            "ip",
-                                            "ipv6"
-                                        ],
-                                        "data_path": "action_result.parameter.ip",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "8.8.8.8"
-                                        ]
-                                    },
-                                    {
-                                        "column_name": "As Owner",
-                                        "column_order": 1,
-                                        "data_path": "action_result.data.*.as_owner",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Test Inc."
-                                        ]
-                                    },
-                                    {
-                                        "column_name": "Asn",
-                                        "column_order": 2,
-                                        "data_path": "action_result.data.*.asn",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "15169"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.continent",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "NA"
-                                        ]
-                                    },
-                                    {
-                                        "column_name": "Country",
-                                        "column_order": 3,
-                                        "data_path": "action_result.data.*.country",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "US"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_communicating_samples.*.date",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2019-02-01 08:27:02"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_communicating_samples.*.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "sha256"
-                                        ],
-                                        "data_path": "action_result.data.*.detected_communicating_samples.*.sha256",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "95aea1163cd742d895f048de9b7f7ae83149ba2515b174dc6d5cfd910cb07ee3"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_communicating_samples.*.total",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            61
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.date",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2017-09-28 14:00:34"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "sha256"
-                                        ],
-                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.sha256",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2b977b6342a624097b669fd2347ffbcbdc8a814369b5f431835793dbaa2251c8"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.total",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            57
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_referrer_samples.*.date",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2018-02-14 12:35:57"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_referrer_samples.*.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            25
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "sha256"
-                                        ],
-                                        "data_path": "action_result.data.*.detected_referrer_samples.*.sha256",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "6c16bbddc9dcbf447c44afb11387115ac657852fcdf30cf068cf6e11e8786212"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_referrer_samples.*.total",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            70
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_urls.*.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            9
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_urls.*.scan_date",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2019-02-01 07:31:41"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_urls.*.total",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            67
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "url",
-                                            "file name"
-                                        ],
-                                        "data_path": "action_result.data.*.detected_urls.*.url",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "http://vanmaulop10.com/now/index.php?mail="
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.network",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "8.8.8.0/24"
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "host name"
-                                        ],
-                                        "data_path": "action_result.data.*.resolutions.*.hostname",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "*.o365answers.com"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.resolutions.*.last_resolved",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2015-12-10 00:00:00"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.response_code",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.date",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2019-02-01 09:03:52"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            0
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "sha256"
-                                        ],
-                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.sha256",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "414296de0c223c28910d99797701d4fa192208f4e30c32b0dc07da7602d7a4fb"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.total",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            57
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.date",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2019-01-30 20:23:21"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            0
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "sha256"
-                                        ],
-                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.sha256",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "23926e9185d8d43c02807a838ffb373cc1977726094a4e46807c66ada9dd7660"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.total",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            71
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_referrer_samples.*.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            0
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "sha256"
-                                        ],
-                                        "data_path": "action_result.data.*.undetected_referrer_samples.*.sha256",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "01e110d94eec3ec8abed7c9bb34fd7bcc3bd06c397ec83676431fc193be3b68e"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_referrer_samples.*.total",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            55
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_urls.*",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2018-10-01 03:53:53"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.verbose_msg",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "IP address in dataset"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.communicating_samples",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            100
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.detected_urls",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            100
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.downloaded_samples",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            11
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Downloaded samples: 11, Detected urls: 100, Communicating samples: 100"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            0
-                                        ]
-                                    }
-                                ],
-                                "parameters": {
-                                    "ip": {
-                                        "contains": [
-                                            "ip",
-                                            "ipv6"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "IP to query",
-                                        "key": "ip",
-                                        "order": 0,
-                                        "primary": true,
-                                        "required": true
-                                    }
-                                },
-                                "product_name": "VirusTotal",
-                                "product_vendor": "VirusTotal",
-                                "targets": "6",
-                                "type": "reputation"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "ip reputation"
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Investigate"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def ip_reputation_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('ip_reputation_1() called')\n\n    # collect data for 'ip_reputation_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.destinationAddress', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'ip_reputation_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'ip': container_item[0],\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(\"ip reputation\", parameters=parameters, assets=['virustotal_api'], callback=prompt_10, name=\"ip_reputation_1\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "66216455-ac45-4ca7-909c-d4a18af52619",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 186,
-                        "line_start": 165,
-                        "message": "Configuring now",
-                        "name": "ip reputation",
-                        "notes": "",
-                        "number": 1,
-                        "order": 8,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 460,
-                            "y": -140
-                        },
-                        "previous_function": "",
-                        "previous_name": "ip_reputation_1",
-                        "required_params": {
-                            "ip": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "",
-                        "title": "Investigate",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 498
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773",
-                                "transform": "rotate(45 30 70)"
-                            },
-                            ".inPorts>.port-0>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".number": {
-                                "text": 14
-                            },
-                            ".outPorts>.port-0": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                },
-                                "ref-x": 83,
-                                "ref-y": 40
-                            },
-                            ".outPorts>.port-0>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def filter_14(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('filter_14() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        conditions=[\n            [\"artifact:*.cef.destinationAddress\", \">=\", \"1\"],\n        ],\n        name=\"filter_14:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        ip_reputation_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "4b0e6fba-b76b-40a0-a3fa-6dff162fe213",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 203,
-                        "line_start": 186,
-                        "name": "filter",
-                        "notes": "",
-                        "number": 14,
-                        "order": 9,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "outputs": [
-                            {
-                                "conditions": [
-                                    {
-                                        "comparison": ">=",
-                                        "data_type": "",
-                                        "param": "artifact:*.cef.destinationAddress",
-                                        "value": "1"
-                                    }
-                                ],
-                                "display": "If",
-                                "logic": "and",
-                                "type": "if"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 80,
-                            "y": 40
-                        },
-                        "previous_function": "",
-                        "previous_name": "filter_14",
-                        "show_number": true,
-                        "size": {
-                            "height": 82,
-                            "width": 82
-                        },
-                        "state": "filter",
-                        "status": "",
-                        "type": "coa.Filter",
-                        "warn": false,
-                        "z": 499
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "975f5e14-25cf-419a-a735-c9f5043c0dfc",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "66216455-ac45-4ca7-909c-d4a18af52619",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "ce1f43bb-46f9-4d1d-bb26-0493f6049bae",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 500
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "approver": "admin",
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".number": {
-                                "text": 10
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def prompt_10(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('prompt_10() called')\n    \n    # set user and message variables for phantom.prompt call\n    user = \"admin\"\n    message = \"\"\"IP info\n{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"ip_reputation_1:action_result.data.*.detected_communicating_samples.*.positives\",\n    ]\n\n    #responses:\n    response_types = [\n        {\n            \"prompt\": \"\",\n            \"options\": {\n                \"type\": \"message\",\n            },\n        },\n    ]\n\n    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name=\"prompt_10\", parameters=parameters, response_types=response_types)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "connected_to_start": true,
-                        "connection_name": "ip reputation",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "ce1f43bb-46f9-4d1d-bb26-0493f6049bae",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 230,
-                        "line_start": 203,
-                        "message": "IP info\n{0}",
-                        "name": "prompt",
-                        "notes": "",
-                        "number": 10,
-                        "order": 10,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "ip_reputation_1:action_result.data.*.detected_communicating_samples.*.positives"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 700,
-                            "y": -140
-                        },
-                        "previous_function": "",
-                        "previous_name": "prompt_10",
-                        "respond_in": "30",
-                        "response_key": "Message",
-                        "response_options": [],
-                        "response_type": "list",
-                        "responses": [
-                            {
-                                "response_key": "Message",
-                                "response_options": [],
-                                "response_prompt": "",
-                                "response_type": "message"
-                            }
-                        ],
-                        "show_number": true,
-                        "size": {
-                            "height": 80,
-                            "width": 80
-                        },
-                        "state": "prompt",
-                        "status": "",
-                        "type": "coa.Prompt",
-                        "warn": false,
-                        "z": 502
-                    },
-                    {
                         "active": false,
                         "angle": 0,
                         "attrs": {
@@ -2050,7 +1037,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def filter_12(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('filter_12() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        conditions=[\n            [\"artifact:*.cef.requestURL\", \">=\", \"1\"],\n        ],\n        name=\"filter_12:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        playbook_pfj_soar_playbooks_PFJ_URL_Recon_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n\n    return",
+                        "block_code": "def filter_12(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('filter_12() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        conditions=[\n            [\"artifact:*.cef.requestURL\", \">=\", \"1\"],\n        ],\n        name=\"filter_12:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        playbook_soar_Sorsnce_URL_Recon_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -2645,12 +1632,12 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 247,
-                        "line_start": 230,
+                        "line_end": 199,
+                        "line_start": 182,
                         "name": "filter",
                         "notes": "",
                         "number": 16,
-                        "order": 11,
+                        "order": 9,
                         "outPorts": [
                             "out-1"
                         ],
@@ -2809,12 +1796,12 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 264,
-                        "line_start": 247,
+                        "line_end": 216,
+                        "line_start": 199,
                         "name": "filter",
                         "notes": "",
                         "number": 17,
-                        "order": 12,
+                        "order": 10,
                         "outPorts": [
                             "out-1"
                         ],
@@ -3810,7 +2797,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def filter_20(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('filter_20() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        conditions=[\n            [\"artifact:*.cef.fileHashSha256\", \">=\", \"1\"],\n            [\"artifact:*.cef.fileHashMd5\", \">=\", \"1\"],\n            [\"artifact:*.cef.fileHashSha1\", \">=\", \"1\"],\n            [\"artifact:*.cef.fileHashSha512\", \">=\", \"1\"],\n        ],\n        logical_operator='or',\n        name=\"filter_20:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        playbook_pfj_soar_playbooks_PFJ_Hash_Recon_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n\n    return",
+                        "block_code": "def filter_20(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('filter_20() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        conditions=[\n            [\"artifact:*.cef.fileHashSha256\", \">=\", \"1\"],\n            [\"artifact:*.cef.fileHashMd5\", \">=\", \"1\"],\n            [\"artifact:*.cef.fileHashSha1\", \">=\", \"1\"],\n            [\"artifact:*.cef.fileHashSha512\", \">=\", \"1\"],\n        ],\n        logical_operator='or',\n        name=\"filter_20:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        playbook_soar_Sorsnce_Hash_Recon_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -3833,12 +2820,12 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 285,
-                        "line_start": 264,
+                        "line_end": 237,
+                        "line_start": 216,
                         "name": "filter",
                         "notes": "",
                         "number": 20,
-                        "order": 13,
+                        "order": 11,
                         "outPorts": [
                             "out-1"
                         ],
@@ -3950,6 +2937,210 @@
                         "attrs": {
                             ".background": {
                                 "fill": "#000000",
+                                "stroke": "#5C6773",
+                                "transform": "rotate(45 30 70)"
+                            },
+                            ".inPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".number": {
+                                "text": 14
+                            },
+                            ".outPorts>.port-0": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                },
+                                "ref-x": 83,
+                                "ref-y": 40
+                            },
+                            ".outPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def filter_14(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('filter_14() called')\n\n    # collect filtered artifact ids for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        conditions=[\n            [\"artifact:*.cef.destinationAddress\", \">=\", \"1\"],\n        ],\n        name=\"filter_14:condition_1\")\n\n    # call connected blocks if filtered artifacts or results\n    if matched_artifacts_1 or matched_results_1:\n        playbook_soar_Sorsnce_IP_Recon_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "4b0e6fba-b76b-40a0-a3fa-6dff162fe213",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 182,
+                        "line_start": 165,
+                        "name": "filter",
+                        "notes": "",
+                        "number": 14,
+                        "order": 8,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "outputs": [
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": ">=",
+                                        "data_type": "",
+                                        "param": "artifact:*.cef.destinationAddress",
+                                        "value": "1"
+                                    }
+                                ],
+                                "display": "If",
+                                "logic": "and",
+                                "type": "if"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 100,
+                            "y": 460
+                        },
+                        "previous_function": "",
+                        "previous_name": "filter_14",
+                        "show_number": true,
+                        "size": {
+                            "height": 82,
+                            "width": 82
+                        },
+                        "state": "filter",
+                        "status": "",
+                        "type": "coa.Filter",
+                        "warn": false,
+                        "z": 613
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "59361be3-ca8b-402d-b640-7060eea5cabc",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "4b0e6fba-b76b-40a0-a3fa-6dff162fe213",
+                            "port": "out-1",
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "5d72a213-04a5-4af0-95ac-e5d4b41dca60",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 614
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
                                 "stroke": "#5C6773"
                             },
                             ".color-band": {
@@ -3982,13 +3173,10 @@
                                 }
                             },
                             ".playbook": {
-                                "text": "pfj-soar-playbooks/PFJ_..."
+                                "text": "soar/Sorsnce_IP_Recon"
                             },
                             ".title": {
                                 "text": "Playbook"
-                            },
-                            "g.code image": {
-                                "opacity": 1
                             },
                             "g.delete": {
                                 "display": "none"
@@ -3998,15 +3186,12 @@
                             },
                             "g.notes": {
                                 "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
                             }
                         },
-                        "block_code": "def playbook_pfj_soar_playbooks_PFJ_Hash_Recon_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('playbook_pfj_soar_playbooks_PFJ_Hash_Recon_1() called')\n    \n    # call playbook \"pfj-soar-playbooks/PFJ_Hash_Recon\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(\"pfj-soar-playbooks/PFJ_Hash_Recon\", container=container, name=\"playbook_pfj_soar_playbooks_PFJ_Hash_Recon_1\")\n\n    return",
+                        "block_code": "def playbook_soar_Sorsnce_IP_Recon_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('playbook_soar_Sorsnce_IP_Recon_1() called')\n    \n    # call playbook \"soar/Sorsnce_IP_Recon\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(\"soar/Sorsnce_IP_Recon\", container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
-                        "callsback": true,
+                        "callsback": false,
                         "connected_to_start": true,
                         "connection_name": "",
                         "connection_type": "",
@@ -4019,24 +3204,24 @@
                         "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "b1bd6db5-6355-49ca-9d6e-aa5baf322164",
+                        "id": "5d72a213-04a5-4af0-95ac-e5d4b41dca60",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 301,
-                        "line_start": 293,
+                        "line_end": 261,
+                        "line_start": 253,
                         "message": "Configuring now",
-                        "name": "pfj-soar-playbooks/PFJ_Hash_Recon",
+                        "name": "soar/Sorsnce_IP_Recon",
                         "notes": "",
                         "number": 1,
-                        "order": 15,
+                        "order": 14,
                         "outPorts": [
                             "out"
                         ],
-                        "playbook": "pfj-soar-playbooks/PFJ_Hash_Recon",
+                        "playbook": "soar/Sorsnce_IP_Recon",
                         "ports": {
                             "groups": {
                                 "in": {
@@ -4091,10 +3276,10 @@
                         },
                         "position": {
                             "x": 240,
-                            "y": 180
+                            "y": 460
                         },
                         "previous_function": "",
-                        "previous_name": "playbook_pfj_soar_playbooks_PFJ_Hash_Recon_1",
+                        "previous_name": "playbook_soar_Sorsnce_IP_Recon_1",
                         "show_number": false,
                         "size": {
                             "height": 100,
@@ -4105,7 +3290,7 @@
                         "title": "Playbook",
                         "type": "coa.CallPlaybook",
                         "warn": false,
-                        "z": 611
+                        "z": 616
                     },
                     {
                         "active": false,
@@ -4145,7 +3330,7 @@
                                 }
                             },
                             ".playbook": {
-                                "text": "pfj-soar-playbooks/PFJ_..."
+                                "text": "soar/Sorsnce_URL_Reco..."
                             },
                             ".title": {
                                 "text": "Playbook"
@@ -4166,7 +3351,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def playbook_pfj_soar_playbooks_PFJ_URL_Recon_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('playbook_pfj_soar_playbooks_PFJ_URL_Recon_1() called')\n    \n    # call playbook \"pfj-soar-playbooks/PFJ_URL_Recon\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(\"pfj-soar-playbooks/PFJ_URL_Recon\", container=container, name=\"playbook_pfj_soar_playbooks_PFJ_URL_Recon_1\")\n\n    return",
+                        "block_code": "def playbook_soar_Sorsnce_URL_Recon_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('playbook_soar_Sorsnce_URL_Recon_1() called')\n    \n    # call playbook \"soar/Sorsnce_URL_Recon\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(\"soar/Sorsnce_URL_Recon\", container=container, name=\"playbook_soar_Sorsnce_URL_Recon_1\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -4189,17 +3374,17 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 293,
-                        "line_start": 285,
+                        "line_end": 245,
+                        "line_start": 237,
                         "message": "Configuring now",
-                        "name": "pfj-soar-playbooks/PFJ_URL_Recon",
+                        "name": "soar/Sorsnce_URL_Recon",
                         "notes": "",
                         "number": 1,
-                        "order": 14,
+                        "order": 12,
                         "outPorts": [
                             "out"
                         ],
-                        "playbook": "pfj-soar-playbooks/PFJ_URL_Recon",
+                        "playbook": "soar/Sorsnce_URL_Recon",
                         "ports": {
                             "groups": {
                                 "in": {
@@ -4268,7 +3453,170 @@
                         "title": "Playbook",
                         "type": "coa.CallPlaybook",
                         "warn": false,
-                        "z": 612
+                        "z": 617
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".playbook": {
+                                "text": "soar/Sorsnce_Hash_Rec..."
+                            },
+                            ".title": {
+                                "text": "Playbook"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def playbook_soar_Sorsnce_Hash_Recon_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('playbook_soar_Sorsnce_Hash_Recon_1() called')\n    \n    # call playbook \"soar/Sorsnce_Hash_Recon\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(\"soar/Sorsnce_Hash_Recon\", container=container, name=\"playbook_soar_Sorsnce_Hash_Recon_1\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "b1bd6db5-6355-49ca-9d6e-aa5baf322164",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 253,
+                        "line_start": 245,
+                        "message": "Configuring now",
+                        "name": "soar/Sorsnce_Hash_Recon",
+                        "notes": "",
+                        "number": 1,
+                        "order": 13,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "playbook": "soar/Sorsnce_Hash_Recon",
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 240,
+                            "y": 180
+                        },
+                        "previous_function": "",
+                        "previous_name": "playbook_pfj_soar_playbooks_PFJ_Hash_Recon_1",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "callplaybook",
+                        "status": "",
+                        "title": "Playbook",
+                        "type": "coa.CallPlaybook",
+                        "warn": false,
+                        "z": 618
                     }
                 ]
             },
@@ -4277,7 +3625,7 @@
         "schema": 3,
         "version": "4.5.15922"
     },
-    "create_time": "2019-09-10T17:25:08.108493+00:00",
+    "create_time": "2019-09-10T17:54:18.577036+00:00",
     "draft_mode": false,
     "labels": [
         "email"
