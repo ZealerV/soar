@@ -19,22 +19,17 @@ def scan_network_1(action=None, success=None, container=None, results=None, hand
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'scan_network_1' call
-    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.deviceAddress', 'artifact:*.id'])
 
     parameters = []
     
     # build parameters list for 'scan_network_1' call
-    for container_item in container_data:
-        if container_item[0]:
-            parameters.append({
-                'portlist': "",
-                'script-args': "-A",
-                'script': "",
-                'ip_hostname': container_item[0],
-                'udp_scan': "",
-                # context (artifact id) is added to associate results with the artifact
-                'context': {'artifact_id': container_item[1]},
-            })
+    parameters.append({
+        'portlist': "",
+        'script-args': "-A",
+        'script': "",
+        'ip_hostname': "10.10.10.161",
+        'udp_scan': "",
+    })
 
     phantom.act("scan network", parameters=parameters, assets=['nmap'], callback=prompt_1, name="scan_network_1", parent_action=action)
 
