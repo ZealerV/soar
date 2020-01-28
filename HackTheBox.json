@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "f89c99b00974e8bae6e6325718cee696a07b4763",
+            "hash": "78e44b9de3b28598482d44dbc688fc4e22f77ada",
             "joint": {
                 "cells": [
                     {
@@ -217,8 +217,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 135,
-                        "line_start": 122,
+                        "line_end": 127,
+                        "line_start": 114,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -277,8 +277,8 @@
                             }
                         },
                         "position": {
-                            "x": 1460,
-                            "y": 100
+                            "x": 720,
+                            "y": 120
                         },
                         "previous_function": "",
                         "previous_name": "",
@@ -1278,7 +1278,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('format_1() called')\n    \n    template = \"\"\"Investigate the following Ports:\n\n{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"scan_network_1:action_result.data.*.tcp.*.name\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_1\")\n\n    prompt_1(container=container)\n\n    return",
+                        "block_code": "def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('format_1() called')\n    \n    template = \"\"\"Investigate the following Ports:\n\n{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"scan_network_1:action_result.data.*.tcp.*.name\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_1\")\n\n    send_message_2(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -1302,8 +1302,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 96,
-                        "line_start": 78,
+                        "line_end": 94,
+                        "line_start": 76,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -1372,8 +1372,8 @@
                             }
                         },
                         "position": {
-                            "x": 720,
-                            "y": 80
+                            "x": 160,
+                            "y": 240
                         },
                         "previous_function": "",
                         "previous_name": "format_1",
@@ -1389,46 +1389,6 @@
                         "type": "coa.Format",
                         "warn": false,
                         "z": 27
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "b3b69d7c-2aaa-40c8-82ed-c2f42c6ebc48",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "0c257c4c-e249-4b18-92aa-2cab62d9abc2",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "cea88854-42ec-4e36-9d53-36ed8075d029",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 29
                     },
                     {
                         "action": "execute program",
@@ -1584,7 +1544,7 @@
                             },
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#5C6773"
+                                "stroke": "#E6984E"
                             },
                             ".color-band": {
                                 "fill": "#3C444D"
@@ -1622,7 +1582,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 0
+                                "opacity": 1
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -1634,14 +1594,14 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def execute_program_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('execute_program_2() called')\n    \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'execute_program_2' call\n\n    parameters = []\n    \n    # build parameters list for 'execute_program_2' call\n    parameters.append({\n        'ip_hostname': \"phantom.sorsnce.com\",\n        'command': \"sudo kill $(ps aux | grep openvpn | awk '{print $2}')\",\n        'script_file': \"\",\n        'timeout': \"\",\n    })\n\n    phantom.act(\"execute program\", parameters=parameters, assets=['phantom-ssh'], name=\"execute_program_2\")\n\n    return",
+                        "block_code": "def execute_program_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('execute_program_2() called')\n\n    # collect data for 'execute_program_2' call\n\n    parameters = []\n    \n    # build parameters list for 'execute_program_2' call\n    parameters.append({\n        'ip_hostname': \"phantom.sorsnce.com\",\n        'command': \"sudo kill $(ps aux | grep openvpn | awk '{print $2}')\",\n        'script_file': \"\",\n        'timeout': \"\",\n    })\n\n    phantom.act(\"execute program\", parameters=parameters, assets=['phantom-ssh'], name=\"execute_program_2\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
                         "color": "",
                         "connected_to_start": false,
-                        "connection_name": "prompt 1",
-                        "connection_type": "action",
+                        "connection_name": "",
+                        "connection_type": "",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -1659,7 +1619,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 78,
+                        "line_end": 76,
                         "line_start": 57,
                         "message": "Configuring now",
                         "name": "execute program",
@@ -1722,8 +1682,8 @@
                             }
                         },
                         "position": {
-                            "x": 1180,
-                            "y": 80
+                            "x": 780,
+                            "y": 240
                         },
                         "previous_function": "",
                         "previous_name": "execute_program_2",
@@ -1737,20 +1697,211 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "",
+                        "status": "warn",
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": "",
                         "z": 31
                     },
                     {
-                        "active": false,
-                        "angle": 0,
-                        "approver": "admin",
                         "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "357a874b-8c78-418f-badf-3f9d0d13b336",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "0c257c4c-e249-4b18-92aa-2cab62d9abc2",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "64655fc7-ad82-404f-aadb-ace8550366d9",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 32
+                    },
+                    {
+                        "action": "send message",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "destination": "#personal-monitor",
+                            "message": "format_1:formatted_data"
+                        },
+                        "angle": 0,
+                        "app": "Slack",
+                        "appid": "3ac26c7f-baa4-4583-86ff-5aac82778a86",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "send message",
+                                "actions": [
+                                    "stop bot",
+                                    "on poll",
+                                    "get response",
+                                    "ask question",
+                                    "upload file",
+                                    "send message",
+                                    "get user",
+                                    "list users",
+                                    "list channels",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "Slack",
+                                "app_version": "1.2.21",
+                                "appid": "3ac26c7f-baa4-4583-86ff-5aac82778a86",
+                                "asset_name": "slack",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "destination": "#personal-monitor",
+                                    "message": "format_1:formatted_data"
+                                },
+                                "has_app": true,
+                                "id": 10,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "slack",
+                                "output": [
+                                    {
+                                        "column_name": "Status",
+                                        "column_order": 2,
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Destination",
+                                        "column_order": 0,
+                                        "contains": [
+                                            "slack destination",
+                                            "slack user"
+                                        ],
+                                        "data_path": "action_result.parameter.destination",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Message",
+                                        "column_order": 1,
+                                        "data_path": "action_result.parameter.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "slack destination"
+                                        ],
+                                        "data_path": "action_result.data.*.channel",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.message.bot_id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.message.text",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.message.ts",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.message.type",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.message.user",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.ok",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.ts",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "destination": {
+                                        "contains": [
+                                            "slack destination",
+                                            "slack user"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Channel (e.g. #channel or C1A1A1AAA) or user (e.g. @user or U1A1A1AAA) to send message to",
+                                        "key": "destination",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    },
+                                    "message": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Message to send",
+                                        "key": "message",
+                                        "order": 1,
+                                        "primary": false,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Slack",
+                                "product_vendor": "Slack Technologies",
+                                "targets": "10",
+                                "type": "information"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "send message"
+                            },
                             ".background": {
                                 "fill": "#000000",
                                 "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -1762,8 +1913,11 @@
                                     "type": "in"
                                 }
                             },
-                            ".number": {
-                                "text": 1
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
                             },
                             ".outPorts>.port-out": {
                                 "ref": ".background",
@@ -1775,20 +1929,27 @@
                                     "type": "out"
                                 }
                             },
+                            ".title": {
+                                "text": "Generic"
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
                             "g.notes": {
                                 "display": "block"
                             }
                         },
-                        "block_code": "def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('prompt_1() called')\n    \n    # set user and message variables for phantom.prompt call\n    user = \"admin\"\n    message = \"\"\"{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"format_1:formatted_data\",\n    ]\n\n    #responses:\n    response_types = [\n        {\n            \"prompt\": \"\",\n            \"options\": {\n                \"type\": \"message\",\n            },\n        },\n    ]\n\n    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name=\"prompt_1\", parameters=parameters, response_types=response_types, callback=execute_program_2)\n\n    return",
+                        "block_code": "def send_message_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('send_message_2() called')\n    \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'send_message_2' call\n    formatted_data_1 = phantom.get_format_data(name='format_1')\n\n    parameters = []\n    \n    # build parameters list for 'send_message_2' call\n    parameters.append({\n        'destination': \"#personal-monitor\",\n        'message': formatted_data_1,\n    })\n\n    phantom.act(\"send message\", parameters=parameters, assets=['slack'], name=\"send_message_2\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
+                        "color": "",
                         "connected_to_start": true,
                         "connection_name": "scan network",
                         "connection_type": "action",
@@ -1796,34 +1957,28 @@
                         "custom_code": "",
                         "custom_join": "",
                         "custom_name": "",
+                        "delay": 0,
                         "description": "",
                         "has_custom": false,
                         "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "cea88854-42ec-4e36-9d53-36ed8075d029",
+                        "id": "64655fc7-ad82-404f-aadb-ace8550366d9",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 122,
-                        "line_start": 96,
-                        "message": "{0}",
-                        "name": "prompt",
+                        "line_end": 114,
+                        "line_start": 94,
+                        "message": "Configuring now",
+                        "name": "send message",
                         "notes": "",
-                        "number": 1,
+                        "number": 2,
                         "order": 6,
                         "outPorts": [
                             "out"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "format_1:formatted_data"
-                            }
                         ],
                         "ports": {
                             "groups": {
@@ -1878,73 +2033,26 @@
                             }
                         },
                         "position": {
-                            "x": 1000,
-                            "y": 80
+                            "x": 500,
+                            "y": 240
                         },
                         "previous_function": "",
-                        "previous_name": "prompt_1",
-                        "respond_in": "30",
-                        "response_key": "Message",
-                        "response_options": [],
-                        "response_type": "list",
-                        "responses": [
-                            {
-                                "response_key": "Message",
-                                "response_options": [],
-                                "response_prompt": "",
-                                "response_type": "message"
-                            }
-                        ],
-                        "show_number": true,
+                        "previous_name": "send_message_2",
+                        "required_params": {
+                            "destination": true,
+                            "message": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
                         "size": {
-                            "height": 80,
-                            "width": 80
+                            "height": 100,
+                            "width": 180
                         },
-                        "state": "prompt",
+                        "state": "app_action_assets",
                         "status": "",
-                        "type": "coa.Prompt",
-                        "warn": false,
-                        "z": 32
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "fd545658-37ea-4a1b-bbf4-13464ead4748",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "cea88854-42ec-4e36-9d53-36ed8075d029",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "3358d3b7-7e61-4cce-9f4f-98326f7ae2e3",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": "",
                         "z": 33
                     }
                 ]
@@ -1954,7 +2062,7 @@
         "schema": 3,
         "version": "4.5.15922"
     },
-    "create_time": "2020-01-28T21:00:03.430527+00:00",
+    "create_time": "2020-01-28T21:03:59.326232+00:00",
     "draft_mode": false,
     "labels": [
         "*"

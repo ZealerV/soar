@@ -56,9 +56,7 @@ def execute_program_1(action=None, success=None, container=None, results=None, h
 
 def execute_program_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('execute_program_2() called')
-    
-    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
+
     # collect data for 'execute_program_2' call
 
     parameters = []
@@ -89,33 +87,27 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_1")
 
-    prompt_1(container=container)
+    send_message_2(container=container)
 
     return
 
-def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('prompt_1() called')
+def send_message_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('send_message_2() called')
     
-    # set user and message variables for phantom.prompt call
-    user = "admin"
-    message = """{0}"""
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'send_message_2' call
+    formatted_data_1 = phantom.get_format_data(name='format_1')
 
-    # parameter list for template variable replacement
-    parameters = [
-        "format_1:formatted_data",
-    ]
+    parameters = []
+    
+    # build parameters list for 'send_message_2' call
+    parameters.append({
+        'destination': "#personal-monitor",
+        'message': formatted_data_1,
+    })
 
-    #responses:
-    response_types = [
-        {
-            "prompt": "",
-            "options": {
-                "type": "message",
-            },
-        },
-    ]
-
-    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name="prompt_1", parameters=parameters, response_types=response_types, callback=execute_program_2)
+    phantom.act("send message", parameters=parameters, assets=['slack'], name="send_message_2")
 
     return
 
