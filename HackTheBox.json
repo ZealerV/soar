@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "39d2f08c589d5273a48ad2791d234b2b17c6c408",
+            "hash": "d95ee4c3aca5aa51c73814d6ae6909a402d4dbca",
             "joint": {
                 "cells": [
                     {
@@ -153,6 +153,551 @@
                         "type": "coa.StartEnd",
                         "warn": false,
                         "z": 1
+                    },
+                    {
+                        "0": "E",
+                        "1": "N",
+                        "2": "D",
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".title": {
+                                "text": "END"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_end.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def on_finish(container, summary):\n    phantom.debug('on_finish() called')\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all detals of actions \n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n    return",
+                        "callback_code": "# read-only block view not available",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "9b5d410d-3c3a-4bfe-8277-617fdc30429d",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "# read-only block view not available",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 103,
+                        "line_start": 90,
+                        "name": "",
+                        "notes": "",
+                        "number": 0,
+                        "order": 5,
+                        "outPorts": [],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 880,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 54,
+                            "width": 80
+                        },
+                        "status": "",
+                        "title": "END",
+                        "type": "coa.StartEnd",
+                        "warn": false,
+                        "z": 7
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "93fdc8a0-c7a4-4b10-9d0a-f57acffb8c00",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "79f2a57c-b31b-4d4f-98ff-16bb2e0b9f88",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "3a9fc6b0-bdf0-4aa9-b8e2-4e2af73337ab",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 8
+                    },
+                    {
+                        "action": "execute program",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "command": "sudo openvpn /home/user/sorsnce.ovpn &",
+                            "ip_hostname": "phantom.sorsnce.com",
+                            "script_file": "",
+                            "timeout": ""
+                        },
+                        "angle": 0,
+                        "app": "SSH",
+                        "appid": "d37aa7fe-c973-44ee-a164-2ca5bf321b1f",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "execute program",
+                                "actions": [
+                                    "put file",
+                                    "get file",
+                                    "get memory usage",
+                                    "get disk usage",
+                                    "list processes",
+                                    "logoff user",
+                                    "terminate process",
+                                    "shutdown system",
+                                    "reboot system",
+                                    "delete firewall rule",
+                                    "list firewall rules",
+                                    "block ip",
+                                    "list connections",
+                                    "execute program",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "SSH",
+                                "app_version": "1.0.47",
+                                "appid": "d37aa7fe-c973-44ee-a164-2ca5bf321b1f",
+                                "asset_name": "phantom-ssh",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "command": "sudo openvpn /home/user/sorsnce.ovpn &",
+                                    "ip_hostname": "phantom.sorsnce.com",
+                                    "script_file": "",
+                                    "timeout": ""
+                                },
+                                "has_app": true,
+                                "id": 13,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phantom-ssh",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.command",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "ip",
+                                            "host name"
+                                        ],
+                                        "data_path": "action_result.parameter.ip_hostname",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.script_file",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.timeout",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.output",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.exit_status",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "command": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Command to be executed on endpoint",
+                                        "key": "command",
+                                        "order": 1,
+                                        "required": false
+                                    },
+                                    "ip_hostname": {
+                                        "contains": [
+                                            "ip",
+                                            "host name"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Hostname/IP to execute command on",
+                                        "key": "ip_hostname",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    },
+                                    "script_file": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Local path to shell script",
+                                        "key": "script_file",
+                                        "order": 2,
+                                        "required": false
+                                    },
+                                    "timeout": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Seconds before timeout (Default: 60)",
+                                        "key": "timeout",
+                                        "order": 3,
+                                        "required": false
+                                    }
+                                },
+                                "product_name": "SSH",
+                                "product_vendor": "Generic",
+                                "targets": "13",
+                                "type": "endpoint"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "execute program"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def execute_program_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('execute_program_1() called')\n\n    # collect data for 'execute_program_1' call\n\n    parameters = []\n    \n    # build parameters list for 'execute_program_1' call\n    parameters.append({\n        'command': \"sudo openvpn /home/user/sorsnce.ovpn &\",\n        'timeout': \"\",\n        'ip_hostname': \"phantom.sorsnce.com\",\n        'script_file': \"\",\n    })\n\n    phantom.act(\"execute program\", parameters=parameters, assets=['phantom-ssh'], callback=scan_network_1, name=\"execute_program_1\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "3a9fc6b0-bdf0-4aa9-b8e2-4e2af73337ab",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 62,
+                        "line_start": 43,
+                        "message": "Configuring now",
+                        "name": "execute program",
+                        "notes": "",
+                        "number": 1,
+                        "order": 3,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 160,
+                            "y": 80
+                        },
+                        "previous_function": "",
+                        "previous_name": "execute_program_1",
+                        "required_params": {
+                            "ip_hostname": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 12
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "be4fcee0-abbc-40c3-86e6-66d664b6ada1",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "3a9fc6b0-bdf0-4aa9-b8e2-4e2af73337ab",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "3b56dd25-4d1f-4b3b-ba06-16ee4399c0e6",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 13
                     },
                     {
                         "action": "scan network",
@@ -430,7 +975,7 @@
                             },
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#E6984E"
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
                                 "fill": "#3C444D"
@@ -474,7 +1019,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -492,14 +1037,14 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def scan_network_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('scan_network_1() called')\n\n    # collect data for 'scan_network_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.deviceAddress', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'scan_network_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'portlist': \"\",\n                'script-args': \"-A\",\n                'script': \"\",\n                'ip_hostname': container_item[0],\n                'udp_scan': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(\"scan network\", parameters=parameters, assets=['nmap'], name=\"scan_network_1\")\n\n    return",
+                        "block_code": "def scan_network_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('scan_network_1() called')\n    \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'scan_network_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.deviceAddress', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'scan_network_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'portlist': \"\",\n                'script-args': \"-A\",\n                'script': \"\",\n                'ip_hostname': container_item[0],\n                'udp_scan': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(\"scan network\", parameters=parameters, assets=['nmap'], callback=prompt_1, name=\"scan_network_1\", parent_action=action)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
+                        "connection_name": "execute program",
+                        "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -517,7 +1062,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 41,
+                        "line_end": 43,
                         "line_start": 16,
                         "message": "Configuring now",
                         "name": "scan network",
@@ -595,11 +1140,11 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "warn",
+                        "status": "",
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 5
+                        "z": 14
                     },
                     {
                         "attrs": {
@@ -622,7 +1167,7 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "1a196fc7-9d3d-43f9-9da6-00fd3c70c261",
+                        "id": "6b849ff0-ada0-4803-8f20-23a6fe011fd6",
                         "router": {
                             "name": "metro"
                         },
@@ -635,26 +1180,20 @@
                             "right"
                         ],
                         "target": {
-                            "id": "9b5d410d-3c3a-4bfe-8277-617fdc30429d",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                            "id": "62f99ab5-e40d-471c-aa63-bca835e720b1",
+                            "selector": ".port-body[type=\"input\"]"
                         },
                         "type": "link",
-                        "z": 6
+                        "z": 15
                     },
                     {
-                        "0": "E",
-                        "1": "N",
-                        "2": "D",
                         "active": false,
                         "angle": 0,
+                        "approver": "admin",
                         "attrs": {
                             ".background": {
                                 "fill": "#000000",
                                 "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -666,8 +1205,18 @@
                                     "type": "in"
                                 }
                             },
-                            ".title": {
-                                "text": "END"
+                            ".number": {
+                                "text": 1
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
                             },
                             "g.delete": {
                                 "display": "none"
@@ -675,17 +1224,14 @@
                             "g.error": {
                                 "opacity": 0
                             },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_end.svg"
-                            },
                             "g.notes": {
                                 "display": "block"
                             }
                         },
-                        "block_code": "def on_finish(container, summary):\n    phantom.debug('on_finish() called')\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all detals of actions \n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n    return",
-                        "callback_code": "# read-only block view not available",
+                        "block_code": "def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('prompt_1() called')\n    \n    # set user and message variables for phantom.prompt call\n    user = \"admin\"\n    message = \"\"\"TEST\n\n{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"scan_network_1:action_result.data.*.tcp.*.state\",\n    ]\n\n    #responses:\n    response_types = [\n        {\n            \"prompt\": \"\",\n            \"options\": {\n                \"type\": \"message\",\n            },\n        },\n    ]\n\n    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name=\"prompt_1\", parameters=parameters, response_types=response_types)\n\n    return",
+                        "callback_code": "",
                         "callback_start": 1,
-                        "callsback": false,
+                        "callsback": true,
                         "connected_to_start": true,
                         "connection_name": "scan network",
                         "connection_type": "action",
@@ -698,379 +1244,29 @@
                         "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "9b5d410d-3c3a-4bfe-8277-617fdc30429d",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "# read-only block view not available",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 73,
-                        "line_start": 60,
-                        "name": "",
-                        "notes": "",
-                        "number": 0,
-                        "order": 4,
-                        "outPorts": [],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 680,
-                            "y": 100
-                        },
-                        "previous_function": "",
-                        "previous_name": "",
-                        "show_number": true,
-                        "size": {
-                            "height": 54,
-                            "width": 80
-                        },
-                        "status": "",
-                        "title": "END",
-                        "type": "coa.StartEnd",
-                        "warn": false,
-                        "z": 7
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "93fdc8a0-c7a4-4b10-9d0a-f57acffb8c00",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "79f2a57c-b31b-4d4f-98ff-16bb2e0b9f88",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "3a9fc6b0-bdf0-4aa9-b8e2-4e2af73337ab",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 8
-                    },
-                    {
-                        "action": "execute program",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "command": "sudo openvpn /home/user/sorsnce.ovpn",
-                            "ip_hostname": "phantom.sorsnce.com",
-                            "script_file": "",
-                            "timeout": ""
-                        },
-                        "angle": 0,
-                        "app": "SSH",
-                        "appid": "d37aa7fe-c973-44ee-a164-2ca5bf321b1f",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "execute program",
-                                "actions": [
-                                    "put file",
-                                    "get file",
-                                    "get memory usage",
-                                    "get disk usage",
-                                    "list processes",
-                                    "logoff user",
-                                    "terminate process",
-                                    "shutdown system",
-                                    "reboot system",
-                                    "delete firewall rule",
-                                    "list firewall rules",
-                                    "block ip",
-                                    "list connections",
-                                    "execute program",
-                                    "test connectivity"
-                                ],
-                                "active": true,
-                                "app_name": "SSH",
-                                "app_version": "1.0.47",
-                                "appid": "d37aa7fe-c973-44ee-a164-2ca5bf321b1f",
-                                "asset_name": "phantom-ssh",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "command": "sudo openvpn /home/user/sorsnce.ovpn",
-                                    "ip_hostname": "phantom.sorsnce.com",
-                                    "script_file": "",
-                                    "timeout": ""
-                                },
-                                "has_app": true,
-                                "id": 13,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "phantom-ssh",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.command",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "ip",
-                                            "host name"
-                                        ],
-                                        "data_path": "action_result.parameter.ip_hostname",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.script_file",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.timeout",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.output",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.exit_status",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric"
-                                    }
-                                ],
-                                "parameters": {
-                                    "command": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Command to be executed on endpoint",
-                                        "key": "command",
-                                        "order": 1,
-                                        "required": false
-                                    },
-                                    "ip_hostname": {
-                                        "contains": [
-                                            "ip",
-                                            "host name"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Hostname/IP to execute command on",
-                                        "key": "ip_hostname",
-                                        "order": 0,
-                                        "primary": true,
-                                        "required": true
-                                    },
-                                    "script_file": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Local path to shell script",
-                                        "key": "script_file",
-                                        "order": 2,
-                                        "required": false
-                                    },
-                                    "timeout": {
-                                        "data_type": "numeric",
-                                        "default": null,
-                                        "description": "Seconds before timeout (Default: 60)",
-                                        "key": "timeout",
-                                        "order": 3,
-                                        "required": false
-                                    }
-                                },
-                                "product_name": "SSH",
-                                "product_vendor": "Generic",
-                                "targets": "13",
-                                "type": "endpoint"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "execute program"
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def execute_program_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('execute_program_1() called')\n\n    # collect data for 'execute_program_1' call\n\n    parameters = []\n    \n    # build parameters list for 'execute_program_1' call\n    parameters.append({\n        'command': \"sudo openvpn /home/user/sorsnce.ovpn\",\n        'timeout': \"\",\n        'ip_hostname': \"phantom.sorsnce.com\",\n        'script_file': \"\",\n    })\n\n    phantom.act(\"execute program\", parameters=parameters, assets=['phantom-ssh'], name=\"execute_program_1\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "3a9fc6b0-bdf0-4aa9-b8e2-4e2af73337ab",
+                        "id": "62f99ab5-e40d-471c-aa63-bca835e720b1",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 60,
-                        "line_start": 41,
-                        "message": "Configuring now",
-                        "name": "execute program",
+                        "line_end": 90,
+                        "line_start": 62,
+                        "message": "TEST\n\n{0}",
+                        "name": "prompt",
                         "notes": "",
                         "number": 1,
-                        "order": 3,
+                        "order": 4,
                         "outPorts": [
                             "out"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "scan_network_1:action_result.data.*.tcp.*.state"
+                            }
                         ],
                         "ports": {
                             "groups": {
@@ -1125,26 +1321,33 @@
                             }
                         },
                         "position": {
-                            "x": 160,
+                            "x": 720,
                             "y": 80
                         },
                         "previous_function": "",
-                        "previous_name": "execute_program_1",
-                        "required_params": {
-                            "ip_hostname": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
+                        "previous_name": "prompt_1",
+                        "respond_in": "30",
+                        "response_key": "Message",
+                        "response_options": [],
+                        "response_type": "list",
+                        "responses": [
+                            {
+                                "response_key": "Message",
+                                "response_options": [],
+                                "response_prompt": "",
+                                "response_type": "message"
+                            }
+                        ],
+                        "show_number": true,
                         "size": {
-                            "height": 100,
-                            "width": 180
+                            "height": 80,
+                            "width": 80
                         },
-                        "state": "app_action_assets",
+                        "state": "prompt",
                         "status": "",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": "",
-                        "z": 11
+                        "type": "coa.Prompt",
+                        "warn": false,
+                        "z": 17
                     }
                 ]
             },
@@ -1153,7 +1356,7 @@
         "schema": 3,
         "version": "4.5.15922"
     },
-    "create_time": "2020-01-28T20:43:22.019695+00:00",
+    "create_time": "2020-01-28T20:45:53.219408+00:00",
     "draft_mode": false,
     "labels": [
         "*"

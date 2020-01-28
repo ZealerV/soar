@@ -15,7 +15,9 @@ def on_start(container):
 
 def scan_network_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('scan_network_1() called')
-
+    
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
     # collect data for 'scan_network_1' call
     container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.deviceAddress', 'artifact:*.id'])
 
@@ -34,7 +36,7 @@ def scan_network_1(action=None, success=None, container=None, results=None, hand
                 'context': {'artifact_id': container_item[1]},
             })
 
-    phantom.act("scan network", parameters=parameters, assets=['nmap'], name="scan_network_1")
+    phantom.act("scan network", parameters=parameters, assets=['nmap'], callback=prompt_1, name="scan_network_1", parent_action=action)
 
     return
 
@@ -47,13 +49,41 @@ def execute_program_1(action=None, success=None, container=None, results=None, h
     
     # build parameters list for 'execute_program_1' call
     parameters.append({
-        'command': "sudo openvpn /home/user/sorsnce.ovpn",
+        'command': "sudo openvpn /home/user/sorsnce.ovpn &",
         'timeout': "",
         'ip_hostname': "phantom.sorsnce.com",
         'script_file': "",
     })
 
-    phantom.act("execute program", parameters=parameters, assets=['phantom-ssh'], name="execute_program_1")
+    phantom.act("execute program", parameters=parameters, assets=['phantom-ssh'], callback=scan_network_1, name="execute_program_1")
+
+    return
+
+def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('prompt_1() called')
+    
+    # set user and message variables for phantom.prompt call
+    user = "admin"
+    message = """TEST
+
+{0}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "scan_network_1:action_result.data.*.tcp.*.state",
+    ]
+
+    #responses:
+    response_types = [
+        {
+            "prompt": "",
+            "options": {
+                "type": "message",
+            },
+        },
+    ]
+
+    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name="prompt_1", parameters=parameters, response_types=response_types)
 
     return
 
