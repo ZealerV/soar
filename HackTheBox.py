@@ -65,7 +65,7 @@ def prompt_1(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "scan_network_1:action_result.data.*.tcp.*.state",
+        "scan_network_1:action_result.message",
     ]
 
     #responses:
