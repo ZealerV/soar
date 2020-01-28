@@ -56,7 +56,9 @@ def execute_program_1(action=None, success=None, container=None, results=None, h
 
 def execute_program_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('execute_program_2() called')
-
+    
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
     # collect data for 'execute_program_2' call
 
     parameters = []
@@ -69,7 +71,7 @@ def execute_program_2(action=None, success=None, container=None, results=None, h
         'timeout': "",
     })
 
-    phantom.act("execute program", parameters=parameters, assets=['phantom-ssh'], name="execute_program_2")
+    phantom.act("execute program", parameters=parameters, assets=['phantom-ssh'], name="execute_program_2", parent_action=action)
 
     return
 
@@ -107,7 +109,7 @@ def send_message_2(action=None, success=None, container=None, results=None, hand
         'message': formatted_data_1,
     })
 
-    phantom.act("send message", parameters=parameters, assets=['slack'], name="send_message_2")
+    phantom.act("send message", parameters=parameters, assets=['slack'], callback=execute_program_2, name="send_message_2")
 
     return
 

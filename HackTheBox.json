@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "78e44b9de3b28598482d44dbc688fc4e22f77ada",
+            "hash": "fd974e2a61c3d537bdd463dee62cf10597dc7aab",
             "joint": {
                 "cells": [
                     {
@@ -217,8 +217,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 127,
-                        "line_start": 114,
+                        "line_end": 129,
+                        "line_start": 116,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -1302,8 +1302,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 94,
-                        "line_start": 76,
+                        "line_end": 96,
+                        "line_start": 78,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -1544,7 +1544,7 @@
                             },
                             ".background": {
                                 "fill": "#000000",
-                                "stroke": "#E6984E"
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
                                 "fill": "#3C444D"
@@ -1582,7 +1582,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -1594,14 +1594,14 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def execute_program_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('execute_program_2() called')\n\n    # collect data for 'execute_program_2' call\n\n    parameters = []\n    \n    # build parameters list for 'execute_program_2' call\n    parameters.append({\n        'ip_hostname': \"phantom.sorsnce.com\",\n        'command': \"sudo kill $(ps aux | grep openvpn | awk '{print $2}')\",\n        'script_file': \"\",\n        'timeout': \"\",\n    })\n\n    phantom.act(\"execute program\", parameters=parameters, assets=['phantom-ssh'], name=\"execute_program_2\")\n\n    return",
+                        "block_code": "def execute_program_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('execute_program_2() called')\n    \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'execute_program_2' call\n\n    parameters = []\n    \n    # build parameters list for 'execute_program_2' call\n    parameters.append({\n        'ip_hostname': \"phantom.sorsnce.com\",\n        'command': \"sudo kill $(ps aux | grep openvpn | awk '{print $2}')\",\n        'script_file': \"\",\n        'timeout': \"\",\n    })\n\n    phantom.act(\"execute program\", parameters=parameters, assets=['phantom-ssh'], name=\"execute_program_2\", parent_action=action)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
                         "color": "",
                         "connected_to_start": false,
-                        "connection_name": "",
-                        "connection_type": "",
+                        "connection_name": "send message",
+                        "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -1619,7 +1619,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 76,
+                        "line_end": 78,
                         "line_start": 57,
                         "message": "Configuring now",
                         "name": "execute program",
@@ -1682,7 +1682,7 @@
                             }
                         },
                         "position": {
-                            "x": 780,
+                            "x": 640,
                             "y": 240
                         },
                         "previous_function": "",
@@ -1697,7 +1697,7 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "warn",
+                        "status": "",
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": "",
@@ -1945,7 +1945,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def send_message_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('send_message_2() called')\n    \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'send_message_2' call\n    formatted_data_1 = phantom.get_format_data(name='format_1')\n\n    parameters = []\n    \n    # build parameters list for 'send_message_2' call\n    parameters.append({\n        'destination': \"#personal-monitor\",\n        'message': formatted_data_1,\n    })\n\n    phantom.act(\"send message\", parameters=parameters, assets=['slack'], name=\"send_message_2\")\n\n    return",
+                        "block_code": "def send_message_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('send_message_2() called')\n    \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'send_message_2' call\n    formatted_data_1 = phantom.get_format_data(name='format_1')\n\n    parameters = []\n    \n    # build parameters list for 'send_message_2' call\n    parameters.append({\n        'destination': \"#personal-monitor\",\n        'message': formatted_data_1,\n    })\n\n    phantom.act(\"send message\", parameters=parameters, assets=['slack'], callback=execute_program_2, name=\"send_message_2\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -1970,8 +1970,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 114,
-                        "line_start": 94,
+                        "line_end": 116,
+                        "line_start": 96,
                         "message": "Configuring now",
                         "name": "send message",
                         "notes": "",
@@ -2033,7 +2033,7 @@
                             }
                         },
                         "position": {
-                            "x": 500,
+                            "x": 400,
                             "y": 240
                         },
                         "previous_function": "",
@@ -2054,6 +2054,47 @@
                         "type": "coa.Action",
                         "warn": "",
                         "z": 33
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "5bc4be93-bf41-4e85-9a49-0da20bc2fbcf",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "64655fc7-ad82-404f-aadb-ace8550366d9",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "3358d3b7-7e61-4cce-9f4f-98326f7ae2e3",
+                            "port": null,
+                            "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 34
                     }
                 ]
             },
@@ -2062,7 +2103,7 @@
         "schema": 3,
         "version": "4.5.15922"
     },
-    "create_time": "2020-01-28T21:03:59.326232+00:00",
+    "create_time": "2020-01-28T21:04:12.346474+00:00",
     "draft_mode": false,
     "labels": [
         "*"
