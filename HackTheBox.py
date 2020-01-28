@@ -78,7 +78,28 @@ def prompt_1(action=None, success=None, container=None, results=None, handle=Non
         },
     ]
 
-    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name="prompt_1", parameters=parameters, response_types=response_types)
+    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name="prompt_1", parameters=parameters, response_types=response_types, callback=execute_program_2)
+
+    return
+
+def execute_program_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('execute_program_2() called')
+    
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'execute_program_2' call
+
+    parameters = []
+    
+    # build parameters list for 'execute_program_2' call
+    parameters.append({
+        'ip_hostname': "phantom.sorsnce.com",
+        'command': "sudo kill $(ps aux | grep openvpn | awk '{print $2}')",
+        'script_file': "",
+        'timeout': "",
+    })
+
+    phantom.act("execute program", parameters=parameters, assets=['phantom-ssh'], name="execute_program_2")
 
     return
 
