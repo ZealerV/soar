@@ -25,11 +25,11 @@ def scan_network_1(action=None, success=None, container=None, results=None, hand
     for container_item in container_data:
         if container_item[0]:
             parameters.append({
-                'ip_hostname': container_item[0],
                 'portlist': "",
-                'udp_scan': "",
-                'script': "",
                 'script-args': "-A",
+                'script': "",
+                'ip_hostname': container_item[0],
+                'udp_scan': "",
                 # context (artifact id) is added to associate results with the artifact
                 'context': {'artifact_id': container_item[1]},
             })
@@ -47,10 +47,10 @@ def execute_program_1(action=None, success=None, container=None, results=None, h
     
     # build parameters list for 'execute_program_1' call
     parameters.append({
-        'ip_hostname': "phantom.sorsnce.com",
-        'command': "openvpn /home/user/sorsnce.ovpn",
-        'script_file': "",
+        'command': "sudo openvpn /home/user/sorsnce.ovpn",
         'timeout': "",
+        'ip_hostname': "phantom.sorsnce.com",
+        'script_file': "",
     })
 
     phantom.act("execute program", parameters=parameters, assets=['phantom-ssh'], name="execute_program_1")

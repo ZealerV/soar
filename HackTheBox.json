@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "cc1757c3f14601f7a3fad779c5ffed72f02a6bc3",
+            "hash": "39d2f08c589d5273a48ad2791d234b2b17c6c408",
             "joint": {
                 "cells": [
                     {
@@ -148,7 +148,6 @@
                             "height": 54,
                             "width": 80
                         },
-                        "state": "start",
                         "status": "",
                         "title": "START",
                         "type": "coa.StartEnd",
@@ -465,6 +464,12 @@
                             ".title": {
                                 "text": "Investigate"
                             },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
@@ -479,9 +484,15 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
                             }
                         },
-                        "block_code": "def scan_network_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('scan_network_1() called')\n\n    # collect data for 'scan_network_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.deviceAddress', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'scan_network_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'ip_hostname': container_item[0],\n                'portlist': \"\",\n                'udp_scan': \"\",\n                'script': \"\",\n                'script-args': \"-A\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(\"scan network\", parameters=parameters, assets=['nmap'], name=\"scan_network_1\")\n\n    return",
+                        "block_code": "def scan_network_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('scan_network_1() called')\n\n    # collect data for 'scan_network_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.deviceAddress', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'scan_network_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'portlist': \"\",\n                'script-args': \"-A\",\n                'script': \"\",\n                'ip_hostname': container_item[0],\n                'udp_scan': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(\"scan network\", parameters=parameters, assets=['nmap'], name=\"scan_network_1\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -587,7 +598,7 @@
                         "status": "warn",
                         "title": "Investigate",
                         "type": "coa.Action",
-                        "warn": "",
+                        "warn": false,
                         "z": 5
                     },
                     {
@@ -764,7 +775,6 @@
                             "height": 54,
                             "width": 80
                         },
-                        "state": "end",
                         "status": "",
                         "title": "END",
                         "type": "coa.StartEnd",
@@ -817,7 +827,7 @@
                         "active": false,
                         "active_keys": {},
                         "active_values": {
-                            "command": "openvpn /home/user/sorsnce.ovpn",
+                            "command": "sudo openvpn /home/user/sorsnce.ovpn",
                             "ip_hostname": "phantom.sorsnce.com",
                             "script_file": "",
                             "timeout": ""
@@ -854,7 +864,7 @@
                                 "config_type": "asset",
                                 "count": 0,
                                 "fields": {
-                                    "command": "openvpn /home/user/sorsnce.ovpn",
+                                    "command": "sudo openvpn /home/user/sorsnce.ovpn",
                                     "ip_hostname": "phantom.sorsnce.com",
                                     "script_file": "",
                                     "timeout": ""
@@ -999,6 +1009,12 @@
                             ".title": {
                                 "text": "Generic"
                             },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
                             "g.delete": {
                                 "display": "none"
                             },
@@ -1013,9 +1029,15 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
                             }
                         },
-                        "block_code": "def execute_program_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('execute_program_1() called')\n\n    # collect data for 'execute_program_1' call\n\n    parameters = []\n    \n    # build parameters list for 'execute_program_1' call\n    parameters.append({\n        'ip_hostname': \"phantom.sorsnce.com\",\n        'command': \"openvpn /home/user/sorsnce.ovpn\",\n        'script_file': \"\",\n        'timeout': \"\",\n    })\n\n    phantom.act(\"execute program\", parameters=parameters, assets=['phantom-ssh'], name=\"execute_program_1\")\n\n    return",
+                        "block_code": "def execute_program_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('execute_program_1() called')\n\n    # collect data for 'execute_program_1' call\n\n    parameters = []\n    \n    # build parameters list for 'execute_program_1' call\n    parameters.append({\n        'command': \"sudo openvpn /home/user/sorsnce.ovpn\",\n        'timeout': \"\",\n        'ip_hostname': \"phantom.sorsnce.com\",\n        'script_file': \"\",\n    })\n\n    phantom.act(\"execute program\", parameters=parameters, assets=['phantom-ssh'], name=\"execute_program_1\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -1107,7 +1129,7 @@
                             "y": 80
                         },
                         "previous_function": "",
-                        "previous_name": "block_ip_1",
+                        "previous_name": "execute_program_1",
                         "required_params": {
                             "ip_hostname": true
                         },
@@ -1122,7 +1144,7 @@
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": "",
-                        "z": 10
+                        "z": 11
                     }
                 ]
             },
@@ -1131,7 +1153,7 @@
         "schema": 3,
         "version": "4.5.15922"
     },
-    "create_time": "2020-01-28T20:32:13.520471+00:00",
+    "create_time": "2020-01-28T20:43:22.019695+00:00",
     "draft_mode": false,
     "labels": [
         "*"
