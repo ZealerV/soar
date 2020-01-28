@@ -8,8 +8,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'scan_network_1' block
-    scan_network_1(container=container)
+    # call 'execute_program_1' block
+    execute_program_1(container=container)
 
     return
 
@@ -35,6 +35,25 @@ def scan_network_1(action=None, success=None, container=None, results=None, hand
             })
 
     phantom.act("scan network", parameters=parameters, assets=['nmap'], name="scan_network_1")
+
+    return
+
+def execute_program_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('execute_program_1() called')
+
+    # collect data for 'execute_program_1' call
+
+    parameters = []
+    
+    # build parameters list for 'execute_program_1' call
+    parameters.append({
+        'ip_hostname': "phantom.sorsnce.com",
+        'command': "openvpn /home/user/sorsnce.ovpn",
+        'script_file': "",
+        'timeout': "",
+    })
+
+    phantom.act("execute program", parameters=parameters, assets=['phantom-ssh'], name="execute_program_1")
 
     return
 
