@@ -31,7 +31,7 @@ def scan_network_1(action=None, success=None, container=None, results=None, hand
         'udp_scan': "",
     })
 
-    phantom.act("scan network", parameters=parameters, assets=['nmap'], callback=prompt_1, name="scan_network_1", parent_action=action)
+    phantom.act("scan network", parameters=parameters, assets=['nmap'], callback=format_1, name="scan_network_1", parent_action=action)
 
     return
 
@@ -54,34 +54,6 @@ def execute_program_1(action=None, success=None, container=None, results=None, h
 
     return
 
-def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('prompt_1() called')
-    
-    # set user and message variables for phantom.prompt call
-    user = "admin"
-    message = """TEST
-
-{0}"""
-
-    # parameter list for template variable replacement
-    parameters = [
-        "scan_network_1:action_result.data.*.tcp.*.port",
-    ]
-
-    #responses:
-    response_types = [
-        {
-            "prompt": "",
-            "options": {
-                "type": "message",
-            },
-        },
-    ]
-
-    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name="prompt_1", parameters=parameters, response_types=response_types, callback=execute_program_2)
-
-    return
-
 def execute_program_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('execute_program_2() called')
     
@@ -100,6 +72,50 @@ def execute_program_2(action=None, success=None, container=None, results=None, h
     })
 
     phantom.act("execute program", parameters=parameters, assets=['phantom-ssh'], name="execute_program_2")
+
+    return
+
+def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('format_1() called')
+    
+    template = """Investigate the following Ports:
+
+{0}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "scan_network_1:action_result.data.*.tcp.*.name",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_1")
+
+    prompt_1(container=container)
+
+    return
+
+def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('prompt_1() called')
+    
+    # set user and message variables for phantom.prompt call
+    user = "admin"
+    message = """{0}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "format_1:formatted_data",
+    ]
+
+    #responses:
+    response_types = [
+        {
+            "prompt": "",
+            "options": {
+                "type": "message",
+            },
+        },
+    ]
+
+    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name="prompt_1", parameters=parameters, response_types=response_types, callback=execute_program_2)
 
     return
 
