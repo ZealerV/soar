@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "2d1940ba69de11ef37208bcea237eb48358da6c6",
+            "hash": "f6637ceb613558e65e521e16317d6c1c620251d1",
             "joint": {
                 "cells": [
                     {
@@ -277,7 +277,7 @@
                             }
                         },
                         "position": {
-                            "x": 880,
+                            "x": 1100,
                             "y": 100
                         },
                         "previous_function": "",
@@ -1228,7 +1228,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('prompt_1() called')\n    \n    # set user and message variables for phantom.prompt call\n    user = \"admin\"\n    message = \"\"\"TEST\n\n{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"scan_network_1:action_result.message\",\n    ]\n\n    #responses:\n    response_types = [\n        {\n            \"prompt\": \"\",\n            \"options\": {\n                \"type\": \"message\",\n            },\n        },\n    ]\n\n    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name=\"prompt_1\", parameters=parameters, response_types=response_types)\n\n    return",
+                        "block_code": "def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('prompt_1() called')\n    \n    # set user and message variables for phantom.prompt call\n    user = \"admin\"\n    message = \"\"\"TEST\n\n{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"scan_network_1:action_result.data.*.tcp.*.port\",\n    ]\n\n    #responses:\n    response_types = [\n        {\n            \"prompt\": \"\",\n            \"options\": {\n                \"type\": \"message\",\n            },\n        },\n    ]\n\n    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name=\"prompt_1\", parameters=parameters, response_types=response_types)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -1265,7 +1265,7 @@
                             {
                                 "position": 0,
                                 "type": "",
-                                "value": "scan_network_1:action_result.message"
+                                "value": "scan_network_1:action_result.data.*.tcp.*.port"
                             }
                         ],
                         "ports": {
@@ -1347,7 +1347,7 @@
                         "status": "",
                         "type": "coa.Prompt",
                         "warn": false,
-                        "z": 21
+                        "z": 22
                     }
                 ]
             },
@@ -1356,7 +1356,7 @@
         "schema": 3,
         "version": "4.5.15922"
     },
-    "create_time": "2020-01-28T20:49:26.541238+00:00",
+    "create_time": "2020-01-28T20:54:10.198250+00:00",
     "draft_mode": false,
     "labels": [
         "*"
