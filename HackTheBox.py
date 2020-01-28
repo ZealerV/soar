@@ -44,7 +44,7 @@ def execute_program_1(action=None, success=None, container=None, results=None, h
     
     # build parameters list for 'execute_program_1' call
     parameters.append({
-        'command': "sudo openvpn /home/user/sorsnce.ovpn &",
+        'command': "sudo -b openvpn /home/user/sorsnce.ovpn",
         'timeout': "",
         'ip_hostname': "phantom.sorsnce.com",
         'script_file': "",

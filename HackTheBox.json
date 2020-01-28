@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "adce1f4149d1df4ce3f8eee602d929a74c6d1de6",
+            "hash": "a02a93c5d1e3393f572913d736902781673e8e61",
             "joint": {
                 "cells": [
                     {
@@ -332,331 +332,6 @@
                         },
                         "type": "link",
                         "z": 8
-                    },
-                    {
-                        "action": "execute program",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "command": "sudo openvpn /home/user/sorsnce.ovpn &",
-                            "ip_hostname": "phantom.sorsnce.com",
-                            "script_file": "",
-                            "timeout": ""
-                        },
-                        "angle": 0,
-                        "app": "SSH",
-                        "appid": "d37aa7fe-c973-44ee-a164-2ca5bf321b1f",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "execute program",
-                                "actions": [
-                                    "put file",
-                                    "get file",
-                                    "get memory usage",
-                                    "get disk usage",
-                                    "list processes",
-                                    "logoff user",
-                                    "terminate process",
-                                    "shutdown system",
-                                    "reboot system",
-                                    "delete firewall rule",
-                                    "list firewall rules",
-                                    "block ip",
-                                    "list connections",
-                                    "execute program",
-                                    "test connectivity"
-                                ],
-                                "active": true,
-                                "app_name": "SSH",
-                                "app_version": "1.0.47",
-                                "appid": "d37aa7fe-c973-44ee-a164-2ca5bf321b1f",
-                                "asset_name": "phantom-ssh",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "command": "sudo openvpn /home/user/sorsnce.ovpn &",
-                                    "ip_hostname": "phantom.sorsnce.com",
-                                    "script_file": "",
-                                    "timeout": ""
-                                },
-                                "has_app": true,
-                                "id": 13,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "phantom-ssh",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.command",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "ip",
-                                            "host name"
-                                        ],
-                                        "data_path": "action_result.parameter.ip_hostname",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.script_file",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.timeout",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.output",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.summary",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.exit_status",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric"
-                                    }
-                                ],
-                                "parameters": {
-                                    "command": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Command to be executed on endpoint",
-                                        "key": "command",
-                                        "order": 1,
-                                        "required": false
-                                    },
-                                    "ip_hostname": {
-                                        "contains": [
-                                            "ip",
-                                            "host name"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Hostname/IP to execute command on",
-                                        "key": "ip_hostname",
-                                        "order": 0,
-                                        "primary": true,
-                                        "required": true
-                                    },
-                                    "script_file": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Local path to shell script",
-                                        "key": "script_file",
-                                        "order": 2,
-                                        "required": false
-                                    },
-                                    "timeout": {
-                                        "data_type": "numeric",
-                                        "default": null,
-                                        "description": "Seconds before timeout (Default: 60)",
-                                        "key": "timeout",
-                                        "order": 3,
-                                        "required": false
-                                    }
-                                },
-                                "product_name": "SSH",
-                                "product_vendor": "Generic",
-                                "targets": "13",
-                                "type": "endpoint"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "execute program"
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def execute_program_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('execute_program_1() called')\n\n    # collect data for 'execute_program_1' call\n\n    parameters = []\n    \n    # build parameters list for 'execute_program_1' call\n    parameters.append({\n        'command': \"sudo openvpn /home/user/sorsnce.ovpn &\",\n        'timeout': \"\",\n        'ip_hostname': \"phantom.sorsnce.com\",\n        'script_file': \"\",\n    })\n\n    phantom.act(\"execute program\", parameters=parameters, assets=['phantom-ssh'], callback=scan_network_1, name=\"execute_program_1\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "3a9fc6b0-bdf0-4aa9-b8e2-4e2af73337ab",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 57,
-                        "line_start": 38,
-                        "message": "Configuring now",
-                        "name": "execute program",
-                        "notes": "",
-                        "number": 1,
-                        "order": 3,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 160,
-                            "y": 80
-                        },
-                        "previous_function": "",
-                        "previous_name": "execute_program_1",
-                        "required_params": {
-                            "ip_hostname": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": "",
-                        "z": 12
                     },
                     {
                         "attrs": {
@@ -1348,6 +1023,331 @@
                         "type": "coa.Action",
                         "warn": "",
                         "z": 18
+                    },
+                    {
+                        "action": "execute program",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "command": "sudo -b openvpn /home/user/sorsnce.ovpn",
+                            "ip_hostname": "phantom.sorsnce.com",
+                            "script_file": "",
+                            "timeout": ""
+                        },
+                        "angle": 0,
+                        "app": "SSH",
+                        "appid": "d37aa7fe-c973-44ee-a164-2ca5bf321b1f",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "execute program",
+                                "actions": [
+                                    "put file",
+                                    "get file",
+                                    "get memory usage",
+                                    "get disk usage",
+                                    "list processes",
+                                    "logoff user",
+                                    "terminate process",
+                                    "shutdown system",
+                                    "reboot system",
+                                    "delete firewall rule",
+                                    "list firewall rules",
+                                    "block ip",
+                                    "list connections",
+                                    "execute program",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "SSH",
+                                "app_version": "1.0.47",
+                                "appid": "d37aa7fe-c973-44ee-a164-2ca5bf321b1f",
+                                "asset_name": "phantom-ssh",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "command": "sudo -b openvpn /home/user/sorsnce.ovpn",
+                                    "ip_hostname": "phantom.sorsnce.com",
+                                    "script_file": "",
+                                    "timeout": ""
+                                },
+                                "has_app": true,
+                                "id": 13,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phantom-ssh",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.command",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "ip",
+                                            "host name"
+                                        ],
+                                        "data_path": "action_result.parameter.ip_hostname",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.script_file",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.timeout",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.output",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.exit_status",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "command": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Command to be executed on endpoint",
+                                        "key": "command",
+                                        "order": 1,
+                                        "required": false
+                                    },
+                                    "ip_hostname": {
+                                        "contains": [
+                                            "ip",
+                                            "host name"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Hostname/IP to execute command on",
+                                        "key": "ip_hostname",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    },
+                                    "script_file": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Local path to shell script",
+                                        "key": "script_file",
+                                        "order": 2,
+                                        "required": false
+                                    },
+                                    "timeout": {
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Seconds before timeout (Default: 60)",
+                                        "key": "timeout",
+                                        "order": 3,
+                                        "required": false
+                                    }
+                                },
+                                "product_name": "SSH",
+                                "product_vendor": "Generic",
+                                "targets": "13",
+                                "type": "endpoint"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "execute program"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def execute_program_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('execute_program_1() called')\n\n    # collect data for 'execute_program_1' call\n\n    parameters = []\n    \n    # build parameters list for 'execute_program_1' call\n    parameters.append({\n        'command': \"sudo -b openvpn /home/user/sorsnce.ovpn\",\n        'timeout': \"\",\n        'ip_hostname': \"phantom.sorsnce.com\",\n        'script_file': \"\",\n    })\n\n    phantom.act(\"execute program\", parameters=parameters, assets=['phantom-ssh'], callback=scan_network_1, name=\"execute_program_1\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "3a9fc6b0-bdf0-4aa9-b8e2-4e2af73337ab",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 57,
+                        "line_start": 38,
+                        "message": "Configuring now",
+                        "name": "execute program",
+                        "notes": "",
+                        "number": 1,
+                        "order": 3,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 160,
+                            "y": 80
+                        },
+                        "previous_function": "",
+                        "previous_name": "execute_program_1",
+                        "required_params": {
+                            "ip_hostname": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 19
                     }
                 ]
             },
@@ -1356,7 +1356,7 @@
         "schema": 3,
         "version": "4.5.15922"
     },
-    "create_time": "2020-01-28T20:46:58.371222+00:00",
+    "create_time": "2020-01-28T20:48:04.728522+00:00",
     "draft_mode": false,
     "labels": [
         "*"
