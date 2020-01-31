@@ -17,6 +17,24 @@ The following how-to will show you how to edit the python source code and preven
 
 ![Delete Python](https://i.imgur.com/fm0kkuR.jpg)
 
-5. Next we will log into Splunk>Phantom and manually sync the playbooks via Source Control. Go to `Playbooks` from the home dropdown menu, click the `update from source control` green button on the right-hand side. Select the correct "Source Control" from the dropdown menu, select `Force Update` and click the green "Update" button.
+5. Next we will log into **Splunk>Phantom** and manually sync the playbooks via Source Control. Go to `Playbooks` from the home dropdown menu, click the `update from source control` green button on the right-hand side. Select the correct **"Source Control"** from the dropdown menu, select `Force Update` and click the green **"Update"** button.
 
 ![Source Sync](https://i.imgur.com/2Qi3p05.jpg)
+
+6. Now we will want to unzip the downloaded repository from step 3. We will need to get the `SHA1` hash from the Playbook `.py` file and make a note of it. Make sure you get the `SHA1` in all lowercase alphanumeric format. We will use **"Hash Tab"** to calculate our `SHA1`.
+
+![File Hash](https://i.imgur.com/FK2D9SV.jpg)
+
+7. We will edit the playbook `.json` file to include the `SHA1` file hash of the `.py` playbook file. Make sure you save the changes to the `.json` file before uploading back to GitHub.
+
+![JSON](https://i.imgur.com/1dFZmr4.jpg)
+
+8. Now we will upload the `.py` and `.json` files back to GitHub.
+
+![FileUpload](https://i.imgur.com/ANkXJqc.jpg)
+
+9. Next we will log back into **Splunk>Phantom** and manually sync the playbooks via Source Control. Go to `Playbooks` from the home dropdown menu, click the `update from source control` green button on the right-hand side. Select the correct **"Source Control"** from the dropdown menu, select `Force Update` and click the green **"Update"** button.
+
+![Source Sync](https://i.imgur.com/2Qi3p05.jpg)
+
+10. Now the playbook should be updated without the visual editor being locked.
