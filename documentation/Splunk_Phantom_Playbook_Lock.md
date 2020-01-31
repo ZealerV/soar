@@ -11,6 +11,12 @@ The following how-to will show you how to edit the python source code and preven
 
 3. Now that all source code changes have been compleated, we will want to download the entire repository from GitHub via `.zip`
 
-![DownloadSourceCode](https://i.imgur.com/vO3pHOW.png)
+![Download SourceCode](https://i.imgur.com/vO3pHOW.png)
 
-4. 
+4. Once the repository has been downloaded from GitHub and saved on your local machine we will want to delete the playbook we made changes too. Delete the playbook `.py` file from the repository.
+
+![Delete Python](https://i.imgur.com/fm0kkuR.jpg)
+
+5. Next we will log into Splunk>Phantom and manually sync the playbooks via Source Control. Go to `Playbooks` from the home dropdown menu, click the `update from source control` green button on the right-hand side. Select the correct "Source Control" from the dropdown menu, select `Force Update` and click the green "Update" button.
+
+![Source Sync](https://i.imgur.com/2Qi3p05.jpg)
