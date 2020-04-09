@@ -1,4 +1,4 @@
-# SOAR Playbooks
+# Open-Source SOAR Solution
 
 The following project is designed to store all Security Orchestration Automation and Response Playbooks that is being executed within the Splunk Phantom Platform.
 
