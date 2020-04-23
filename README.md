@@ -47,5 +47,3 @@ The following Repository contains the following Playbooks:
 ## Authors
 
 * **Trae Horton** - *Initial work* - [SOAR](https://github.com/sorsnce/SOAR)
-
-a
